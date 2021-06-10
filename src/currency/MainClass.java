@@ -20,5 +20,21 @@ public class MainClass {
 
         dollar.setMarga(0.14);
         dollar.exchangeGrnToCurrency(1000);
+
+        dollar.exchangeCurrencyToGrn(100);
+
+        Euro euro = new Euro(35);
+        System.out.println(euro.getKursNBU());
+
+        euro.exchangeGrnToCurrency(1000);
+        euro.exchangeCurrencyToGrn(100);
+        euro.setKursNBU(36);
+        euro.setMarga(0.12);
+        euro.exchangeCurrencyToGrn(1000);
+
+        UZS uzs = new UZS(0.0021);
+        uzs.exchangeGrnToCurrency(100);
+        uzs.setKursNBU(0.0026);
+        uzs.exchangeCurrencyToGrn(100);                   
     }
 }
