@@ -35,6 +35,12 @@ public class MainClass {
         UZS uzs = new UZS(0.0021);
         uzs.exchangeGrnToCurrency(100);
         uzs.setKursNBU(0.0026);
-        uzs.exchangeCurrencyToGrn(100);                   
+        uzs.exchangeCurrencyToGrn(100);
+
+        // HW8
+        Bitcoin bitcoin = new Bitcoin(259999);
+        System.out.println(bitcoin.getKursNBU());
+        bitcoin.exchangeCurrencyToGrn(100);
+        bitcoin.exchangeGrnToCurrency(100);
     }
 }

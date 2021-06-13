@@ -1,6 +1,6 @@
 package currency;
 
-public class Euro extends Currency {
+public class Euro extends Currency implements IsFreeConverted {
     public Euro(double kursNBUEx) {
         super(kursNBUEx);
     }
@@ -8,5 +8,10 @@ public class Euro extends Currency {
     @Override
     String getCurrencyName() {
         return "EUR";
+    }
+
+    @Override
+    public boolean isFreeConv() {
+        return true;
     }
 }
