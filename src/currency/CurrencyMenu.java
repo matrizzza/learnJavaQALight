@@ -7,6 +7,7 @@ public class CurrencyMenu extends Menu {
         System.out.println("Choose currency:");
         System.out.println("1. Dollar");
         System.out.println("2. Euro");
+        System.out.println("3. Bitcoin");
         System.out.println("100: for Exit");
         System.out.println("Enter your choice:");
     }
@@ -19,6 +20,9 @@ public class CurrencyMenu extends Menu {
                 break;
             case 2:
                 tempCurrency = ListOfCurrency.getCurrencyHashMap().get("EUR");
+                break;
+            case 3:
+                tempCurrency = ListOfCurrency.getCurrencyHashMap().get("Bitcoin");
                 break;
             default:
                 System.out.println("Default currency : Dollar");

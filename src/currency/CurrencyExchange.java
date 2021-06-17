@@ -8,8 +8,10 @@ public class CurrencyExchange {
         Dollar dollar = new Dollar(28);
         Euro euro = new Euro(32);
 
+
         ListOfCurrency.addCurrency(dollar);
         ListOfCurrency.addCurrency(euro);
+        ListOfCurrency.addCurrency(new Bitcoin(100000));
 
         int currencyNumber;
         do {
@@ -28,7 +30,8 @@ public class CurrencyExchange {
                     int menuNumber = MenuActions.getNumberOfCurrencyFromConsole();
                     exitActionsMenu = menuNumber != 100;
                     if (exitActionsMenu){
-                        System.out.println("Some Actions");
+//                        System.out.println("Some Actions");
+                        MenuActions.doActionsWithCurrency(workingCurrency, menuNumber);
                     }
                 }   while (exitActionsMenu);
             }
