@@ -5,6 +5,7 @@ import java.util.List;
 
 public class RobotsWar {
     public static void main(String[] args) {
+        //start of RobotsWar
         List<Robot> robotList = new ArrayList<>();
 
         for (int i = 0; i < 2; i++) {               //можно расширить до инициализации N роботов
