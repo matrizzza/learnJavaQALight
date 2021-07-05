@@ -7,7 +7,7 @@ public class RobotsWar {
     public static void main(String[] args) {
         //start of RobotsWar
         List<Robot> robotList = new ArrayList<>();
-
+        //naming of Robots
         for (int i = 0; i < 2; i++) {               //можно расширить до инициализации N роботов
             RobotConsole.printEnterName();
             robotList.add(new Robot(RobotConsole.readStringFromConsole()));
