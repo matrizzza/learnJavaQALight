@@ -1,13 +1,10 @@
 package RobotWar;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class DamageKeys {
     private String alphabet = "QWEASDZXC";
-    private Map<Character, Integer> damageKeys = new HashMap<>();
-    private Map<Character, Boolean> activeKeys = new HashMap<>();
+    private List<Key> damageKeys = new ArrayList<>();
 
     public DamageKeys() {
         for (int i = 0; i < 9; i++) {
@@ -16,8 +13,7 @@ public class DamageKeys {
                 damage = 20;
             }
             char key = getRandomKey();
-            damageKeys.put(key, damage);
-            activeKeys.put(key, true);
+            damageKeys.add(new Key(key, damage, true));
         }
     }
 
@@ -25,12 +21,8 @@ public class DamageKeys {
         return alphabet;
     }
 
-    public Map<Character, Integer> getDamageKeys() {
+    public List<Key> getDamageKeys() {
         return damageKeys;
-    }
-
-    public Map<Character, Boolean> getActiveKeys() {
-        return activeKeys;
     }
 
     private char getRandomKey() {
@@ -41,6 +33,28 @@ public class DamageKeys {
     }
 
     public void setDamageKeyToInactive(char key) {
-        activeKeys.replace(key, false);
+        for (Key damageKey : damageKeys) {
+            if (damageKey.getDamageKey() == key){
+                damageKey.setActive(false);
+            }
+        }
+    }
+
+    public boolean isDamageKayActive(char key){
+        for (Key damageKey : damageKeys) {
+            if (damageKey.getDamageKey() == key){
+                return damageKey.isActive();
+            }
+        }
+        return false;
+    }
+
+    public int getDamageByKey(char key){
+        for (Key damageKey : damageKeys) {
+            if (damageKey.getDamageKey() == key){
+                return damageKey.getDamage();
+            }
+        }
+        return 0;
     }
 }
