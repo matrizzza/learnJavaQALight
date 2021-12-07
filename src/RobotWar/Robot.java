@@ -28,11 +28,12 @@ public class Robot {
     }
 
     public void makeMove(char key) {
-        if (!damageKeys.getActiveKeys().get(key)){
+        int damage = damageKeys.getDamageByKey(key);
+        if (!damageKeys.isDamageKayActive(key)){
             System.out.println("This letter can not be used twice. Next turn...");
-        } else if (damageKeys.getDamageKeys().get(key) > 0){
-            this.health = this.health - damageKeys.getDamageKeys().get(key);
-            RobotConsole.printDamageMsg(damageKeys.getDamageKeys().get(key));
+        } else if (damage > 0){
+            this.health = this.health - damage;
+            RobotConsole.printDamageMsg(damage);
         }
         damageKeys.setDamageKeyToInactive(key);
     }

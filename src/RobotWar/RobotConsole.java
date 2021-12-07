@@ -10,7 +10,12 @@ public class RobotConsole {
 
     public static String readStringFromConsole() {
         Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+        String line = scanner.nextLine();
+        if (line.isEmpty()){
+            System.out.println("Empty string is forbidden, try again");
+            line = readStringFromConsole();
+        }
+        return line;
     }
 
     public static void printHealthOfRobots(List<Robot> robotList) {
